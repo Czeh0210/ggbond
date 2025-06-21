@@ -1,5 +1,7 @@
 **CutiCuti Malaysia**
+
 is an interactive, map-based exploration game where players virtually travel across Malaysia. Players begin by selecting a starting state (initial origin), where they establish a personal farm. From this origin point, players light up the roads to reach tourism-value destinations and cultural sites. As players explore, they unlock tangible heritage (such as monuments, buildings, and landscapes) and intangible heritage (including traditions, festivals, and local stories). Alongside exploration, players can plant, harvest, and trade crops on their farm. Friends can visit each other’s farms and steal vegetables, adding a fun, social twist. By progressing in the game, players earn coins and complete milestones that can be redeemed not only for virtual travel tickets but also for real-world rewards such as travel vouchers, tourism discounts, and special offers through partnerships with official tourism bodies.
+
 
 🎯 Purpose of the Game
 
@@ -10,6 +12,7 @@ is an interactive, map-based exploration game where players virtually travel acr
 - Encourage social interaction and community building.
 
 - Reward players with both virtual and physical travel-related prizes, such as vouchers or tourism packages, through collaboration with official tourism bodies.
+
 
 👥 Created by GG BOND
 
@@ -23,6 +26,7 @@ is an interactive, map-based exploration game where players virtually travel acr
 
 - Lim Fang Yee
 
+
 🛠 Technologies Used
 
 Frontend: HTML5, CSS3, TypeScript, Next.js
@@ -30,6 +34,7 @@ Frontend: HTML5, CSS3, TypeScript, Next.js
 Backend: Next.js
 
 Authentication: Comparing with data stored in JSON file (for demonstration purpose only)
+
 
 ⚡ Challenges and Approaches
 
@@ -68,6 +73,7 @@ Approach:
 - Avoided overloading players with complex features like quizzes, which could feel like an exam rather than a game.
 
 - Made heritage content unlock progressively — information about monuments, traditions, and festivals is revealed piece by piece as users explore, so that learning feels like a reward rather than a chore.
+
 
 📌 Usage Instructions
 

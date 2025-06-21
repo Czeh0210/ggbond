@@ -1,6 +1,14 @@
+"use client";
+import React, { useState } from "react";
 import Shop from "../components/Shop";
+import Inventory from "../components/Inventory";
 
 export default function Page3() {
+  // Shared inventory state
+  const [playerDurian, setPlayerDurian] = useState<number>(3);
+  const [playerPineapple, setPlayerPineapple] = useState<number>(3);
+  const [batuCavesTicket, setBatuCavesTicket] = useState<number>(1);
+
   return (
     <div className="relative w-screen h-screen overflow-hidden">
       {/* Background Image */}
@@ -13,8 +21,20 @@ export default function Page3() {
       </div>
 
       {/* Shop Icon - Top Right Corner */}
-      <div className="absolute top-4 right-4 z-20">
-        <Shop />
+      <div className="absolute top-4 right-4 z-20 flex flex-col items-center">
+        <Shop
+          playerDurian={playerDurian}
+          setPlayerDurian={setPlayerDurian}
+          playerPineapple={playerPineapple}
+          setPlayerPineapple={setPlayerPineapple}
+          batuCavesTicket={batuCavesTicket}
+          setBatuCavesTicket={setBatuCavesTicket}
+        />
+        <Inventory
+          playerDurian={playerDurian}
+          playerPineapple={playerPineapple}
+          batuCavesTicket={batuCavesTicket}
+        />
       </div>
 
       {/* Farm Title */}

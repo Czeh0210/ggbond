@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import LandmarkInfo from './ShopTab';
 
-const InState = () => {
+const InState2 = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [landmarkInfoOpen, setLandmarkInfoOpen] = useState(false);
   const [currentLandmark, setCurrentLandmark] = useState<'lamp' | 'airport'>('lamp');
@@ -101,6 +101,9 @@ const InState = () => {
     height: 1200
   });
   
+  // Location name
+  const locationName = "Kuala Lumpur";
+  
   const playerRef = useRef<{
     x: number;
     y: number;
@@ -118,8 +121,8 @@ const InState = () => {
     isMovingToTarget: boolean;
     moveHorizontalFirst: boolean;
   }>({ 
-    x: 1158, 
-    y: 778, 
+    x: 828, 
+    y: 576, 
     width: 96, 
     height: 96, 
     speed: 2, // Reduced speed for better control
@@ -160,6 +163,11 @@ const InState = () => {
       zoom: cameraRef.current.zoom
     };
     
+    // Display location name
+    ctx.font = '24px Arial';
+    ctx.fillStyle = 'white';
+    ctx.fillText('Location: ' + locationName, 20, 30);
+
     // Handle wheel events for zooming
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
@@ -178,7 +186,10 @@ const InState = () => {
     
     // Load background image
     const backgroundImage = new Image();
-    backgroundImage.src = '/map/Johor.png';
+    backgroundImage.src = '/map/selangor.png'; // Different background for KL
+    backgroundImage.onerror = () => {
+      backgroundImage.src = '/map/State Background.png';
+    };
     
     // Load airport image
     const airportImage = new Image();
@@ -466,8 +477,14 @@ const InState = () => {
       // Draw ocean as the bottom layer (larger than canvas to fill the world)
       ctx.drawImage(oceanImage, 0, 0, world.width, world.height);
       
-      // Draw background (larger than canvas to fill the world)
+      // Draw background
+      ctx.drawImage(oceanImage, 0, 0, world.width, world.height);
       ctx.drawImage(backgroundImage, 0, 0, world.width, world.height);
+      
+      // Draw location name overlay
+      ctx.font = 'bold 32px Arial';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+      ctx.fillText('Location: ' + locationName, 20, 40);
       
       // Get airport reference
       const airport = airportRef.current;
@@ -641,4 +658,4 @@ const InState = () => {
   );
 };
 
-export default InState;
+export default InState2;

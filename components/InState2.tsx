@@ -24,14 +24,7 @@ const InState2 = () => {
     isHovered: false,
     isLit: false
   },
-  { 
-    x: 466, 
-    y: 568, 
-    width: 96, 
-    height: 96,
-    isHovered: false,
-    isLit: false
-  },
+  
   { 
     x: 564, 
     y: 250, 
@@ -40,14 +33,8 @@ const InState2 = () => {
     isHovered: false,
     isLit: false
   },
-  { 
-    x: 204, 
-    y: 394, 
-    width: 96, 
-    height: 96,
-    isHovered: false,
-    isLit: false
-  },
+  
+  
   { 
     x: 1300, 
     y: 600, 

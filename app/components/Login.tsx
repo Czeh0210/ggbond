@@ -1,11 +1,19 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Mail, Lock, User } from 'lucide-react'
 import { FaFacebook, FaGoogle, FaApple } from 'react-icons/fa'
 
 const Login = () => {
   const [isSignUp, setIsSignUp] = useState(false)
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Simulate successful login/signup
+    router.push('/map');
+  };
 
   return (
     <div className="relative flex flex-col justify-center items-center min-h-screen font-['Poppins'] bg-cover bg-center p-5 text-center bg-[url('/KL%20ls.png')]">
@@ -34,7 +42,7 @@ const Login = () => {
           </button>
         </div>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           {isSignUp && (
             <div className="relative mb-5">
               <User size={20} className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400" />

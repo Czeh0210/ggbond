@@ -6,7 +6,7 @@ interface ButtonColorfulProps extends React.ButtonHTMLAttributes<HTMLButtonEleme
     label?: string;
 }
 
-export function ButtonColorful({
+function ButtonColorful({
     className,
     label = "Explore Components",
     ...props
@@ -22,7 +22,6 @@ export function ButtonColorful({
             )}
             {...props}
         >
-            {/* Gradient background effect */}
             <div
                 className={cn(
                     "absolute inset-0",
@@ -31,8 +30,6 @@ export function ButtonColorful({
                     "blur transition-opacity duration-500"
                 )}
             />
-
-            {/* Content */}
             <div className="relative flex items-center justify-center gap-2">
                 <span className="text-white dark:text-zinc-900">{label}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-white/90 dark:text-zinc-900/90" />

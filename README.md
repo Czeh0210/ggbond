@@ -81,11 +81,17 @@ By progressing in the game, players earn **coins** and complete **milestones** t
 ## 📌 **Usage Instructions**
 
 1️⃣ **Register an account or log in** (Malaysian/foreigner options supported).
+
 2️⃣ **Select your initial origin (state)** and set up your farm.
+
 3️⃣ **Daily**: Light up points along routes to explore destinations.
+
 4️⃣ **Plant, harvest, and sell crops**; visit friends' farms to interact (or steal!).
+
 5️⃣ **Complete routes** to unlock heritage sites and earn coins.
+
 6️⃣ **Redeem coins** for virtual flight tickets (that speed up exploration) or physical rewards like tickets or vouchers.
+
 7️⃣ **Continue your journey**, exploring new states and learning about Malaysia’s heritage!
 
 ---

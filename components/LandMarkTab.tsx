@@ -41,10 +41,13 @@ interface LandmarkInfoProps {
 }
 
 // FlyButton component to handle location changes
-function FlyButton({ destination, setOpen }: { destination: string, setOpen: (open: boolean) => void }) {
+function FlyButton({ destination, setOpen, hasTicket = false }: { destination: string, setOpen: (open: boolean) => void, hasTicket?: boolean }) {
   const { currentLocation, setCurrentLocation } = useLocationContext();
   
   const handleFly = () => {
+    // If no ticket, don't allow flying
+    if (!hasTicket) return;
+    
     // Close the landmark info modal
     setOpen(false);
     
@@ -70,9 +73,11 @@ function FlyButton({ destination, setOpen }: { destination: string, setOpen: (op
   return (
     <button 
       onClick={handleFly}
-      className="w-full bg-[#a86c3c] hover:bg-[#8a5a2c] text-white py-1 rounded pixel-font"
+      disabled={!hasTicket}
+      className={`w-full py-1 rounded pixel-font ${hasTicket ? 'bg-[#a86c3c] hover:bg-[#8a5a2c] text-white' : 'bg-gray-400 cursor-not-allowed text-gray-200'}`}
+      title={hasTicket ? 'Fly to this destination' : 'You need a flight ticket first'}
     >
-      FLY NOW
+      {hasTicket ? 'FLY NOW' : 'NEED TICKET'}
     </button>
   );
 }
@@ -177,13 +182,13 @@ const LandmarkInfo = ({ open, setOpen, landmarkType = 'lamp', hasFlightTicket = 
                         <div className="bg-[#e2c290] p-3 rounded-lg border-2 border-[#a86c3c]">
                           <h5 className="font-bold text-[#7c5a3a] mb-1">Kuala Lumpur</h5>
                           <p className="text-xs text-[#7c5a3a] mb-2">Capital city of Malaysia</p>
-                          <FlyButton destination="kuala_lumpur" setOpen={setOpen} />
+                          <FlyButton destination="kuala_lumpur" setOpen={setOpen} hasTicket={hasFlightTicket} />
                         </div>
                         
                         <div className="bg-[#e2c290] p-3 rounded-lg border-2 border-[#a86c3c]">
                           <h5 className="font-bold text-[#7c5a3a] mb-1">Singapore</h5>
                           <p className="text-xs text-[#7c5a3a] mb-2">Island city-state</p>
-                          <FlyButton destination="singapore" setOpen={setOpen} />
+                          <FlyButton destination="singapore" setOpen={setOpen} hasTicket={hasFlightTicket} />
                         </div>
                       </div>
                     </>

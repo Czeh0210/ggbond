@@ -8,7 +8,7 @@ const InState = () => {
   const [landmarkInfoOpen, setLandmarkInfoOpen] = useState(false);
   const [currentLandmark, setCurrentLandmark] = useState<'lamp' | 'airport' | 'temple'>('lamp');
   const [currentLandmarkImage, setCurrentLandmarkImage] = useState<string>("/assets/tangible/SultanMosque.png");
-  const [hasFlightTicket, setHasFlightTicket] = useState(true); // User has a flight ticket by default
+  const [hasFlightTicket, setHasFlightTicket] = useState(false); // User starts without a flight ticket
   // Define lamp objects as an array
   const lampsRef = useRef<Array<{
     x: number;
@@ -327,6 +327,31 @@ const InState = () => {
           if (lamp.x === 1300 && lamp.y === 600) {
             setCurrentLandmark('temple');
             setCurrentLandmarkImage('/assets/tangible/TempleParade.png');
+            
+            // Give the player a flight ticket when they click this specific lamp
+            if (!hasFlightTicket) {
+              setHasFlightTicket(true);
+              // Create a notification that appears briefly
+              const notification = document.createElement('div');
+              notification.textContent = '🎫 Flight Ticket Acquired!';
+              notification.style.position = 'absolute';
+              notification.style.top = '20px';
+              notification.style.left = '50%';
+              notification.style.transform = 'translateX(-50%)';
+              notification.style.backgroundColor = '#a86c3c';
+              notification.style.color = 'white';
+              notification.style.padding = '10px 20px';
+              notification.style.borderRadius = '5px';
+              notification.style.fontWeight = 'bold';
+              notification.style.zIndex = '1000';
+              notification.style.boxShadow = '0 0 0 4px #7c5a3a';
+              document.body.appendChild(notification);
+              
+              // Remove the notification after 3 seconds
+              setTimeout(() => {
+                document.body.removeChild(notification);
+              }, 3000);
+            }
           } else {
             setCurrentLandmark('lamp');
             setCurrentLandmarkImage('/assets/tangible/SultanMosque.png');

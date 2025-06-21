@@ -1,22 +1,23 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CSSProperties } from "react";
 
 export default function OverviewMap() {
-  // Define coordinates for each pin using percentage values
-  const pinPositions = [
-    { x: "10%", y: "15%" },  // Pin 1
-    { x: "20%", y: "25%" },  // Pin 2
-    { x: "30%", y: "20%" },  // Pin 3
-    { x: "40%", y: "30%" },  // Pin 4
-    { x: "50%", y: "25%" },  // Pin 5
-    { x: "60%", y: "35%" },  // Pin 6
-    { x: "70%", y: "40%" },  // Pin 7
-    { x: "25%", y: "45%" },  // Pin 8
-    { x: "35%", y: "55%" },  // Pin 9
-    { x: "45%", y: "65%" },  // Pin 10
-    { x: "55%", y: "60%" },  // Pin 11
-    { x: "65%", y: "70%" },  // Pin 12
-    { x: "75%", y: "50%" },  // Pin 13
+  // Define coordinates and destination pages for each pin
+  const pins = [
+    { x: "15%", y: "12%", name: "Kedah", path: "/states/kedah" },
+    { x: "12.5%", y: "0%", name: "Perlis", path: "/states/perlis" },
+    { x: "13%", y: "16%", name: "Penang", path: "/states/penang" },
+    { x: "18%", y: "30%", name: "Perak", path: "/states/perak" },
+    { x: "21%", y: "50%", name: "Selangor", path: "/states/selangor" },
+    { x: "30%", y: "45%", name: "Pahang", path: "/states/pahang" },
+    { x: "25%", y: "22%", name: "Kelantan", path: "/states/kelantan" },
+    { x: "34%", y: "30%", name: "Terengganu", path: "/states/terengganu" },
+    { x: "25%", y: "57%", name: "Negeri Sembilan", path: "/states/negeri-sembilan" },
+    { x: "26%", y: "65%", name: "Melaka", path: "/states/melaka" },
+    { x: "34%", y: "70%", name: "Johor", path: "/states/johor" },
+    { x: "62%", y: "56%", name: "Sabah", path: "/states/sabah" },
+    { x: "75%", y: "30%", name: "Sarawak", path: "/states/sarawak" },
   ];
 
   return (
@@ -24,8 +25,8 @@ export default function OverviewMap() {
       <main className="flex flex-col gap-[32px] row-start-2 items-center w-full">
         <h1 className="text-3xl font-bold">Malaysia Map Overview</h1>
         
-        {/* Map container with relative positioning */}
-        <div className="relative w-full max-w-4xl h-[600px] border border-gray-200 rounded-lg overflow-hidden">
+        {/* Map container with enhanced border */}
+        <div className="relative w-full h-[600px] border-4 border-blue-500 rounded-lg overflow-hidden shadow-lg p-2 bg-white">
           {/* Malaysia map as background */}
           <Image
             src="/assets/malaysiamap.png"
@@ -35,31 +36,35 @@ export default function OverviewMap() {
             priority
           />
           
-          {/* Place 13 pins on the map */}
-          {pinPositions.map((position, index) => (
-            <div 
+          {/* Place clickable pins on the map */}
+          {pins.map((pin, index) => (
+            <Link 
               key={index}
-              className="absolute" 
+              href={pin.path}
+              className="absolute cursor-pointer transition-transform hover:scale-110 group"
               style={{ 
-                top: position.y, 
-                left: position.x,
+                top: pin.y, 
+                left: pin.x,
                 zIndex: 10
               } as CSSProperties}
+              title={`Visit ${pin.name} page`}
             >
-              <Image
-                src="/assets/pin.png" 
-                alt={`Location pin ${index + 1}`}
-                width={40}
-                height={40}
-                className="w-auto h-auto object-contain"
-              />
-            </div>
+              <div className="relative">
+                <Image
+                  src="/assets/pin.png" 
+                  alt={`${pin.name} location pin`}
+                  width={40}
+                  height={40}
+                  className="w-auto h-auto object-contain"
+                />
+                <span className="absolute whitespace-nowrap top-full left-1/2 transform -translate-x-1/2 mt-1 text-xs font-semibold bg-black text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">
+                  {pin.name}
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
         
-        <p className="text-center max-w-2xl mt-4">
-          Interactive map of Malaysia with key locations marked by pins.
-        </p>
       </main>
       
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">

@@ -28,13 +28,6 @@ const ChevronDownIcon = () => (
   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
 );
 
-// --- Reusable Motif Component (Placeholder) ---
-const EthnicMotif = () => (
-    <div className="w-full flex justify-center py-8">
-        <div className="w-24 h-1 bg-yellow-400 rounded-full" />
-    </div>
-);
-
 // --- FAQ Item Component ---
 // A simple stateful component for the accordion functionality
 const FaqItem = ({ q, a }: { q: string, a: string }) => {
@@ -73,10 +66,8 @@ export default function CutiCutiExplorerPage() {
             <Hero />
             <ProblemVision />
             <HowItWorks />
-            <EthnicMotif />
             <UniqueFeatures />
             <SocialProof />
-            <EthnicMotif />
             <Faq />
             <Footer />
         </div>

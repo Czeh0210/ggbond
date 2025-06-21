@@ -1,28 +1,153 @@
-import React from 'react';
+"use client"
+
+import * as React from "react"
+import { Button } from "./ui/button"
+import { Input } from "./ui/input"
+import { Label } from "./ui/label"
+import { Switch } from "./ui/switch"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./ui/tooltip"
+import { Facebook, Instagram, Moon, Send, Sun, Twitter } from "lucide-react"
 
 export default function Footer() {
-    return (
-        <footer className="bg-blue-900 text-gray-200 py-12 px-4">
-            <div className="max-w-6xl mx-auto text-center">
-                <h3 className="text-2xl font-bold mb-2 text-white">Stay in the loop!</h3>
-                <p className="mb-6">Sign up for our newsletter to get the latest updates on new routes and features.</p>
-                <form className="flex flex-col sm:flex-row items-center gap-2 max-w-md mx-auto">
-                    <input type="email" placeholder="your.email@example.com" className="w-full px-4 py-2 rounded-md text-gray-800" />
-                    <button type="submit" className="w-full sm:w-auto bg-yellow-400 text-blue-900 font-bold px-6 py-2 rounded-md hover:bg-yellow-300">Subscribe</button>
-                </form>
-                <div className="flex justify-center gap-6 my-8">
-                    <a href="#" className="hover:text-white">Twitter</a>
-                    <a href="#" className="hover:text-white">Instagram</a>
-                    <a href="#" className="hover:text-white">Facebook</a>
-                </div>
-                <div className="border-t border-blue-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-sm">
-                    <p>&copy; 2024 Cuti-Cuti Explorer. All Rights Reserved.</p>
-                    <div className="flex gap-4 mt-4 sm:mt-0">
-                        <a href="#" className="hover:text-white">Privacy Policy</a>
-                        <a href="#" className="hover:text-white">Terms of Use</a>
-                    </div>
-                </div>
+  const [isDarkMode, setIsDarkMode] = React.useState(true)
+
+  React.useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark")
+    } else {
+      document.documentElement.classList.remove("dark")
+    }
+  }, [isDarkMode])
+
+  return (
+    <footer className="relative border-t bg-background text-foreground transition-colors duration-300">
+      <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+          <div className="relative">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight">Stay in the Loop!</h2>
+            <p className="mb-6 text-muted-foreground">
+              Sign up for our newsletter for the latest updates on new routes and features.
+            </p>
+            <form className="relative">
+              <Input
+                type="email"
+                placeholder="your.email@example.com"
+                className="pr-12 backdrop-blur-sm"
+              />
+              <Button
+                type="submit"
+                size="icon"
+                className="absolute right-1 top-1 h-8 w-8 rounded-full bg-primary text-primary-foreground transition-transform hover:scale-105"
+              >
+                <Send className="h-4 w-4" />
+                <span className="sr-only">Subscribe</span>
+              </Button>
+            </form>
+          </div>
+          <div>
+            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
+            <nav className="space-y-2 text-sm">
+              <a href="#about" className="block transition-colors hover:text-primary">
+                About
+              </a>
+              <a href="#features" className="block transition-colors hover:text-primary">
+                Features
+              </a>
+              <a href="#media" className="block transition-colors hover:text-primary">
+                Media
+              </a>
+              <a href="#community" className="block transition-colors hover:text-primary">
+                Community
+              </a>
+              <a href="#faq" className="block transition-colors hover:text-primary">
+                FAQ
+              </a>
+            </nav>
+          </div>
+          <div>
+            <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
+            <address className="space-y-2 text-sm not-italic">
+              <p>Cuti-Cuti Explorer HQ</p>
+              <p>Kuala Lumpur, Malaysia</p>
+              <p>Email: contact@cuticutiexplorer.my</p>
+            </address>
+          </div>
+          <div className="relative">
+            <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
+            <div className="mb-6 flex space-x-4">
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button variant="outline" size="icon" className="rounded-full">
+                      <Facebook className="h-4 w-4" />
+                      <span className="sr-only">Facebook</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Follow us on Facebook</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button variant="outline" size="icon" className="rounded-full">
+                      <Twitter className="h-4 w-4" />
+                      <span className="sr-only">Twitter</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Follow us on Twitter</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button variant="outline" size="icon" className="rounded-full">
+                      <Instagram className="h-4 w-4" />
+                      <span className="sr-only">Instagram</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Follow us on Instagram</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             </div>
-        </footer>
-    );
+            <div className="flex items-center space-x-2">
+              <Sun className="h-4 w-4" />
+              <Switch
+                id="dark-mode"
+                checked={isDarkMode}
+                onCheckedChange={setIsDarkMode}
+              />
+              <Moon className="h-4 w-4" />
+              <Label htmlFor="dark-mode" className="sr-only">
+                Toggle dark mode
+              </Label>
+            </div>
+          </div>
+        </div>
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
+          <p className="text-sm text-muted-foreground">
+            &copy; 2024 Cuti-Cuti Explorer. All rights reserved.
+          </p>
+          <nav className="flex gap-4 text-sm">
+            <a href="#" className="transition-colors hover:text-primary">
+              Privacy Policy
+            </a>
+            <a href="#" className="transition-colors hover:text-primary">
+              Terms of Service
+            </a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  )
 } 

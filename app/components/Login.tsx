@@ -11,7 +11,6 @@ const Login = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate successful login/signup
     router.push('/map');
   };
 

@@ -1,92 +1,91 @@
-**CutiCuti Malaysia**
 
-is an interactive, map-based exploration game where players virtually travel across Malaysia. Players begin by selecting a starting state (initial origin), where they establish a personal farm. From this origin point, players light up the roads to reach tourism-value destinations and cultural sites. As players explore, they unlock tangible heritage (such as monuments, buildings, and landscapes) and intangible heritage (including traditions, festivals, and local stories). Alongside exploration, players can plant, harvest, and trade crops on their farm. Friends can visit each other’s farms and steal vegetables, adding a fun, social twist. By progressing in the game, players earn coins and complete milestones that can be redeemed not only for virtual travel tickets but also for real-world rewards such as travel vouchers, tourism discounts, and special offers through partnerships with official tourism bodies.
+---
 
+# 🇲🇾 **CutiCuti Malaysia**
 
-🎯 Purpose of the Game
+*CutiCuti Malaysia* is an interactive, **map-based exploration game** where players virtually travel across Malaysia. Players begin by selecting a **starting state (initial origin)**, where they establish a personal **farm**. From this origin point, players light up the roads to reach **tourism-value destinations** and **cultural sites**.
 
-- Promote awareness of Malaysia’s rich cultural, natural, and tourism heritage.
+As players explore, they unlock:
 
-- Support national tourism campaigns by linking gameplay to real-world destinations.
+* **Tangible heritage** — monuments, buildings, landscapes
+* **Intangible heritage** — traditions, festivals, local stories
 
-- Encourage social interaction and community building.
+Alongside exploration, players can **plant, harvest, and trade crops** on their farm. Friends can visit each other’s farms and **steal vegetables**, adding a fun, social twist.
 
-- Reward players with both virtual and physical travel-related prizes, such as vouchers or tourism packages, through collaboration with official tourism bodies.
+By progressing in the game, players earn **coins** and complete **milestones** that can be redeemed not only for virtual travel tickets but also for **real-world rewards** such as travel vouchers, tourism discounts, and special offers through partnerships with official tourism bodies.
 
+---
 
-👥 Created by GG BOND
+## 🎯 **Purpose of the Game**
 
-- Tan Che Hui
+* Promote awareness of Malaysia’s rich cultural, natural, and tourism heritage.
+* Support national tourism campaigns by linking gameplay to real-world destinations.
+* Encourage social interaction and community building.
+* Reward players with both virtual and physical travel-related prizes, such as vouchers or tourism packages, through collaboration with official tourism bodies.
 
-- Loy Qun Jie
+---
 
-- Ong Kang Yan
+## 👥 **Created by GG BOND**
 
-- Lee Wai Yee
+* Tan Che Hui
+* Loy Qun Jie
+* Ong Kang Yan
+* Lee Wai Yee
+* Lim Fang Yee
 
-- Lim Fang Yee
+---
 
+## 🛠 **Technologies Used**
 
-🛠 Technologies Used
+* **Frontend**: HTML5, CSS3, TypeScript, Next.js
+* **Backend**: Next.js
+* **Authentication**: Comparing with data stored in JSON file (for demonstration purpose only)
 
-Frontend: HTML5, CSS3, TypeScript, Next.js
+---
 
-Backend: Next.js
+## ⚡ **Challenges and Approaches**
 
-Authentication: Comparing with data stored in JSON file (for demonstration purpose only)
+### 🕒 Ensuring User Sustainability
 
+**Challenge:** Keeping players engaged over time through daily gameplay without overwhelming them.
+**Approach:**
 
-⚡ Challenges and Approaches
+* Introduced **daily refreshed light-up chances** to encourage players to return regularly and build a habit.
+* Integrated the **farm mode** as a parallel activity where users can plant, harvest, and trade — offering variety beyond map exploration.
+* Designed the **farming system and social interactions** (e.g., stealing friends’ vegetables) to add fun competition and promote daily logins.
 
-🕒 Ensuring User Sustainability
+---
 
-Challenge: Keeping players engaged over time through daily gameplay without overwhelming them.
+### 🤝 Promoting Community and Social Visibility
 
-Approach:
+**Challenge:** Making the game feel vibrant, visible, and community-driven.
+**Approach:**
 
-- Introduced daily refreshed light-up chances to encourage players to return regularly and build a habit.
+* Enabled **friend system features** — players can add friends and interact by visiting or stealing vegetables, creating playful connections.
+* Developed **community-based mechanics** to encourage visibility of player progress and motivate friendly competition and sharing.
+* Social features serve to strengthen user sustainability through organic promotion and peer engagement.
 
-- Integrated the farm mode as a parallel activity where users can plant, harvest, and trade,offering variety beyond just map exploration.
+---
 
-- Designed the farming system and social interactions (e.g., stealing friends’ vegetables) to add fun competition and promote daily logins.
+### ⚖️ Balancing Exploration and Farming
 
-🤝 Promoting Community and Social Visibility
+**Challenge:** Ensuring both map exploration and farming feel meaningful and enjoyable without one overshadowing the other.
+**Approach:**
 
-Challenge: Making the game feel vibrant, visible, and community-driven.
+* Linked **farming rewards (coins)** to exploration progress, ensuring both contribute toward travel milestones.
+* Avoided overloading players with complex features like quizzes, which could feel like an exam rather than a game.
+* Made **heritage content unlock progressively** — so learning feels like a reward, not a chore.
 
-Approach:
+---
 
-- Enabled friend system features — players can add friends and interact by visiting or stealing vegetables, creating playful connections.
+## 📌 **Usage Instructions**
 
-- Developed community-based mechanics to encourage visibility of player progress and motivate friendly competition and sharing.
+1️⃣ **Register an account or log in** (Malaysian/foreigner options supported).
+2️⃣ **Select your initial origin (state)** and set up your farm.
+3️⃣ **Daily**: Light up points along routes to explore destinations.
+4️⃣ **Plant, harvest, and sell crops**; visit friends' farms to interact (or steal!).
+5️⃣ **Complete routes** to unlock heritage sites and earn coins.
+6️⃣ **Redeem coins** for virtual flight tickets (that speed up exploration) or physical rewards like tickets or vouchers.
+7️⃣ **Continue your journey**, exploring new states and learning about Malaysia’s heritage!
 
-- Social features serve to strengthen user sustainability through organic promotion and peer engagement.
-
-⚖️ Balancing Exploration and Farming
-
-Challenge: Ensuring both map exploration and farming feel meaningful and enjoyable without one overshadowing the other.
-
-Approach:
-
-- Linked farming rewards (coins) to exploration progress, ensuring both contribute toward travel milestones.
-
-- Avoided overloading players with complex features like quizzes, which could feel like an exam rather than a game.
-
-- Made heritage content unlock progressively — information about monuments, traditions, and festivals is revealed piece by piece as users explore, so that learning feels like a reward rather than a chore.
-
-
-📌 Usage Instructions
-
-1️⃣ Register an account or log in (Malaysian/foreigner options supported).
-
-2️⃣ Select your initial origin (state) and set up your farm.
-
-3️⃣ Daily: Light up points available along routes to explore destinations.
-
-4️⃣ Plant, harvest, and sell crops; visit friends' farms to interact (or steal!).
-
-5️⃣ Complete routes to unlock heritage sites and earn coins.
-
-6️⃣ Redeem coins for virtual flight tickets (that speed up the exploration) or physical rewards like tickets or vouchers.
-
-7️⃣ Continue your journey, exploring new states and learning about Malaysia’s heritage!
+---

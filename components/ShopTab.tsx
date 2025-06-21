@@ -186,12 +186,12 @@ const LandmarkInfo = ({ open, setOpen, landmarkType = 'lamp', hasFlightTicket = 
                   <div className="grid grid-cols-2 gap-3">
                     <div className="border-2 border-[#a86c3c] rounded-lg p-1 bg-[#e2c290]">
                       <div className="bg-[#bfa46a] h-24 w-full rounded flex items-center justify-center">
-                        <span className="text-[#7c5a3a] text-sm">Building Exterior</span>
+                        <img src="/assets/placephoto/exterior_sultanibrahim.webp" alt="Building Exterior" className="w-full h-full object-cover" />
                       </div>
                     </div>
                     <div className="border-2 border-[#a86c3c] rounded-lg p-1 bg-[#e2c290]">
                       <div className="bg-[#bfa46a] h-24 w-full rounded flex items-center justify-center">
-                        <span className="text-[#7c5a3a] text-sm">Lamp Close-up</span>
+                        <img src="/assets/placephoto/closeup_sultanibrahim.jpg" alt="Building Exterior" className="w-full h-full object-cover" />
                       </div>
                     </div>
                     <div className="border-2 border-[#a86c3c] rounded-lg p-1 bg-[#e2c290]">

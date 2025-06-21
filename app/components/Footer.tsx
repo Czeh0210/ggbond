@@ -3,46 +3,28 @@
 import * as React from "react"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
-import { Label } from "./ui/label"
-import { Switch } from "./ui/switch"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "./ui/tooltip"
-import { Facebook, Instagram, Moon, Send, Sun, Twitter } from "lucide-react"
+import { Facebook, Instagram, Send, Twitter } from "lucide-react"
 
 export default function Footer() {
-  const [isDarkMode, setIsDarkMode] = React.useState(true)
-
-  React.useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark")
-    } else {
-      document.documentElement.classList.remove("dark")
-    }
-  }, [isDarkMode])
-
   return (
-    <footer className="relative border-t bg-background text-foreground transition-colors duration-300">
+    <footer className="relative border-t-2 border-black bg-background text-foreground">
       <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight">Stay in the Loop!</h2>
-            <p className="mb-6 text-muted-foreground">
+            <h2 className="mb-4 text-2xl font-bold tracking-wider uppercase">Stay in the Loop!</h2>
+            <p className="mb-6 text-muted-foreground leading-relaxed">
               Sign up for our newsletter for the latest updates on new routes and features.
             </p>
-            <form className="relative">
+            <form className="relative flex">
               <Input
                 type="email"
                 placeholder="your.email@example.com"
-                className="pr-12 backdrop-blur-sm"
+                className="!rounded-none border-2 border-r-0 border-black"
               />
               <Button
                 type="submit"
                 size="icon"
-                className="absolute right-1 top-1 h-8 w-8 rounded-full bg-primary text-primary-foreground transition-transform hover:scale-105"
+                className="!rounded-none border-2 border-black"
               >
                 <Send className="h-4 w-4" />
                 <span className="sr-only">Subscribe</span>
@@ -50,27 +32,17 @@ export default function Footer() {
             </form>
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
-            <nav className="space-y-2 text-sm">
-              <a href="#about" className="block transition-colors hover:text-primary">
-                About
-              </a>
-              <a href="#features" className="block transition-colors hover:text-primary">
-                Features
-              </a>
-              <a href="#media" className="block transition-colors hover:text-primary">
-                Media
-              </a>
-              <a href="#community" className="block transition-colors hover:text-primary">
-                Community
-              </a>
-              <a href="#faq" className="block transition-colors hover:text-primary">
-                FAQ
-              </a>
+            <h3 className="mb-4 text-lg font-semibold uppercase">Quick Links</h3>
+            <nav className="space-y-2 text-sm uppercase">
+              <a href="#about" className="block hover:text-primary">About</a>
+              <a href="#features" className="block hover:text-primary">Features</a>
+              <a href="#media" className="block hover:text-primary">Media</a>
+              <a href="#community" className="block hover:text-primary">Community</a>
+              <a href="#faq" className="block hover:text-primary">FAQ</a>
             </nav>
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
+            <h3 className="mb-4 text-lg font-semibold uppercase">Contact Us</h3>
             <address className="space-y-2 text-sm not-italic">
               <p>Cuti-Cuti Explorer HQ</p>
               <p>Kuala Lumpur, Malaysia</p>
@@ -78,73 +50,27 @@ export default function Footer() {
             </address>
           </div>
           <div className="relative">
-            <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
+            <h3 className="mb-4 text-lg font-semibold uppercase">Follow Us</h3>
             <div className="mb-6 flex space-x-4">
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full">
-                      <Facebook className="h-4 w-4" />
-                      <span className="sr-only">Facebook</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Follow us on Facebook</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full">
-                      <Twitter className="h-4 w-4" />
-                      <span className="sr-only">Twitter</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Follow us on Twitter</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full">
-                      <Instagram className="h-4 w-4" />
-                      <span className="sr-only">Instagram</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Follow us on Instagram</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Sun className="h-4 w-4" />
-              <Switch
-                id="dark-mode"
-                checked={isDarkMode}
-                onCheckedChange={setIsDarkMode}
-              />
-              <Moon className="h-4 w-4" />
-              <Label htmlFor="dark-mode" className="sr-only">
-                Toggle dark mode
-              </Label>
+              <Button variant="outline" size="icon" className="!rounded-none border-2 border-black">
+                <Facebook className="h-4 w-4" />
+              </Button>
+              <Button variant="outline" size="icon" className="!rounded-none border-2 border-black">
+                <Twitter className="h-4 w-4" />
+              </Button>
+              <Button variant="outline" size="icon" className="!rounded-none border-2 border-black">
+                <Instagram className="h-4 w-4" />
+              </Button>
             </div>
           </div>
         </div>
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t-2 border-black pt-8 text-center md:flex-row">
           <p className="text-sm text-muted-foreground">
             &copy; 2024 Cuti-Cuti Explorer. All rights reserved.
           </p>
-          <nav className="flex gap-4 text-sm">
-            <a href="#" className="transition-colors hover:text-primary">
-              Privacy Policy
-            </a>
-            <a href="#" className="transition-colors hover:text-primary">
-              Terms of Service
-            </a>
+          <nav className="flex gap-4 text-sm uppercase">
+            <a href="#" className="hover:text-primary">Privacy Policy</a>
+            <a href="#" className="hover:text-primary">Terms of Service</a>
           </nav>
         </div>
       </div>

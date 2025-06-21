@@ -29,31 +29,18 @@ const projectFaqs: FaqItem[] = [
 
 export default function Faq() {
   return (
-    <section className="py-32 bg-gray-50">
-      <div className="container">
-        <div className="text-center">
-          <Badge className="text-xs font-medium">FAQ</Badge>
-          <h1 className="mt-4 text-4xl font-semibold">Common Questions & Answers</h1>
-          <p className="mt-6 font-medium text-muted-foreground">
-            Find out all the essential details about our platform and how you can start your journey.
-          </p>
-        </div>
-        <div className="mx-auto mt-14 max-w-screen-sm">
-          {projectFaqs.map((faq, index) => (
-            <div key={index} className="mb-8 flex gap-4">
-              <span className="flex size-6 shrink-0 items-center justify-center rounded-sm bg-secondary font-mono text-xs text-primary">
-                {index + 1}
-              </span>
-              <div>
-                <div className="mb-2 flex items-center justify-between">
-                  <h3 className="font-medium">{faq.question}</h3>
-                </div>
-                <p className="text-sm text-muted-foreground">{faq.answer}</p>
-              </div>
+    <section className="py-20 px-4 bg-yellow-50 border-y-2 border-black">
+        <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-12 uppercase tracking-wider">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+                {projectFaqs.map((faq, index) => (
+                    <div key={index} className="p-6 border-2 border-black bg-white shadow-[4px_4px_0px_0px_#000] text-left">
+                        <h3 className="font-bold text-lg mb-2 uppercase">{faq.question}</h3>
+                        <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                    </div>
+                ))}
             </div>
-          ))}
         </div>
-      </div>
     </section>
   );
 }; 

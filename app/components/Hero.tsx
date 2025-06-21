@@ -16,17 +16,17 @@ export default function Hero({ onJoinJourneyClick }: { onJoinJourneyClick: () =>
                     <div className="pb-24 pt-12 md:pb-32 lg:pb-56 lg:pt-44">
                         <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
                             <div className="mx-auto max-w-lg text-center lg:ml-0 lg:w-1/2 lg:text-left">
-                                <h1 className="mt-8 max-w-2xl text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">Explore Malaysia, One Route at a Time</h1>
-                                <p className="mt-8 max-w-2xl text-pretty text-lg text-muted-foreground">
+                                <h1 className="mt-8 max-w-2xl text-balance text-4xl font-bold md:text-5xl lg:mt-16 xl:text-6xl uppercase tracking-wider">Explore Malaysia, One Route at a Time</h1>
+                                <p className="mt-8 max-w-2xl text-pretty text-base text-muted-foreground leading-relaxed">
                                     Light up your journey, unlock heritage, and discover the soul of Malaysia through an immersive map-based game.
                                 </p>
-                                <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
-                                    <Button asChild size="lg" className="px-5 text-base">
+                                <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+                                    <Button asChild size="lg" className="px-5 text-base !rounded-none border-2 border-black !shadow-[4px_4px_0px_0px_#000]">
                                         <Link href="/login">
                                             <span className="text-nowrap">Start Exploring</span>
                                         </Link>
                                     </Button>
-                                    <Button asChild size="lg" variant="ghost" className="px-5 text-base">
+                                    <Button asChild size="lg" variant="ghost" className="px-5 text-base !rounded-none border-2 border-transparent hover:border-black">
                                         <Link href="#features">
                                             <span className="text-nowrap">See Features</span>
                                         </Link>
@@ -38,9 +38,9 @@ export default function Hero({ onJoinJourneyClick }: { onJoinJourneyClick: () =>
                 </section>
                 <section className="bg-background pb-16 md:pb-32">
                     <div className="group relative m-auto max-w-6xl px-6">
-                        <div className="flex flex-col items-center md:flex-row">
-                            <div className="md:max-w-44 md:border-r md:pr-6">
-                                <p className="text-end text-sm">Join the Community</p>
+                        <div className="flex flex-col items-center md:flex-row border-y-2 border-black">
+                            <div className="md:max-w-44 md:border-r-2 md:border-black md:pr-6 py-4 md:py-0">
+                                <p className="text-end text-sm uppercase">Join the Community</p>
                             </div>
                             <div className="relative py-6 md:w-[calc(100%-11rem)]">
                                 <InfiniteSlider duration={40} gap={112}>
@@ -88,7 +88,7 @@ const HeroHeader = () => {
         <header>
             <nav
                 data-state={menuState ? 'active' : 'inactive'}
-                className="group bg-background/50 fixed z-20 w-full border-b backdrop-blur-3xl">
+                className="group bg-background/80 fixed z-20 w-full border-b-2 border-black backdrop-blur-sm">
                 <div className="mx-auto max-w-6xl px-6 transition-all duration-300">
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
@@ -99,13 +99,13 @@ const HeroHeader = () => {
                             <button
                                 onClick={() => setMenuState(!menuState)}
                                 aria-label={menuState ? 'Close Menu' : 'Open Menu'}
-                                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
+                                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden border-2 border-transparent focus:border-black">
                                 <Menu className="group-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
                                 <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
                             </button>
 
                             <div className="hidden lg:block">
-                                <ul className="flex gap-8 text-sm">
+                                <ul className="flex gap-8 text-sm uppercase">
                                     {menuItems.map((item, index) => (
                                         <li key={index}>
                                             <Link
@@ -119,9 +119,9 @@ const HeroHeader = () => {
                             </div>
                         </div>
 
-                        <div className="bg-background group-data-[state=active]:block lg:group-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+                        <div className="bg-background group-data-[state=active]:block lg:group-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-lg border-2 border-black p-6 shadow-[4px_4px_0px_0px_#000] md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
                             <div className="lg:hidden">
-                                <ul className="space-y-6 text-base">
+                                <ul className="space-y-6 text-base uppercase">
                                     {menuItems.map((item, index) => (
                                         <li key={index}>
                                             <Link
@@ -143,7 +143,7 @@ const HeroHeader = () => {
 
 const Logo = ({ className }: { className?: string }) => {
     return (
-        <span className={cn('text-lg font-bold', className)}>
+        <span className={cn('text-lg font-bold uppercase tracking-wider', className)}>
             Cuti-Cuti Explorer
         </span>
     )

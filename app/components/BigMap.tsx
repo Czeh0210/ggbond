@@ -16,7 +16,7 @@ export default function BigMap() {
             alt="Friends Icon" 
             width={64} 
             height={64} 
-            className="rounded-full cursor-pointer"
+            className="cursor-pointer border-4 border-black"
           />
         </button>
         <Link href="/ownfarm">
@@ -26,7 +26,7 @@ export default function BigMap() {
               alt="Farm Icon" 
               width={64} 
               height={64} 
-              className="rounded-full cursor-pointer"
+              className="cursor-pointer border-4 border-black"
             />
           </button>
         </Link>

@@ -29,6 +29,9 @@ type CropState = 'grown' | 'planted' | 'stolen';
       newCropStates[index] = 'stolen';
       setCropStates(newCropStates);
       setStolenCount(prev => prev + 1);
+      
+      // Always add durian to inventory when stealing
+      setPlayerDurian(prev => prev + 1);
     }
   };
 
@@ -54,7 +57,6 @@ type CropState = 'grown' | 'planted' | 'stolen';
           playerDurian={playerDurian}
           playerPineapple={playerPineapple}
           batuCavesTicket={batuCavesTicket}
-          setPlayerDurian={setPlayerDurian}
         />
       </div>
 
@@ -79,23 +81,6 @@ type CropState = 'grown' | 'planted' | 'stolen';
       <div className="relative z-10 flex items-center justify-center h-[calc(100vh-160px)] py-4">
         {/* Farm Container - Wraps farmland grid and all decorative elements */}
         <div className="farm-container relative w-fit mx-auto my-auto">
-          {/* Wooden Plank - Top Left */}
-          <div className="relative -top-[3rem] -left-[3rem] w-[12vw] h-[12vw] max-w-[100px] max-h-[100px] z-20 float-left">
-            <img
-              src="/woodenplank.png"
-              alt="Wooden Plank"
-              className="w-full h-full object-contain transform scale-90"
-            />
-          </div>
-
-          {/* House - Top Right */}
-          <div className="relative -top-[3rem] -right-[3rem] w-[12vw] h-[12vw] max-w-[100px] max-h-[100px] z-20 float-right">
-            <img
-              src="/house.png"
-              alt="Farm House"
-              className="w-full h-full object-contain transform scale-90"
-            />
-          </div>
 
           {/* Farmland Grid Container */}
           <div className="clear-both relative grid grid-cols-3 grid-rows-3 gap-2 md:gap-4">

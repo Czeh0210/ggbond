@@ -38,7 +38,7 @@ export default function Inventory({
           onClick={() => setOpen(true)}
         />
         <div className="tooltip absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-amber-100 px-2 py-1 rounded text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
-          Open Inventory
+          Inventory
         </div>
       </div>
       {open && (

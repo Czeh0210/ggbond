@@ -206,7 +206,3 @@ export default function Shop({
     </div>
   );
 }
-
-// Add this to your globals.css for pixelated images:
-// .pixelated { image-rendering: pixelated; }
-// .pixel-font { font-family: 'Press Start 2P', 'VT323', 'Courier New', monospace; }

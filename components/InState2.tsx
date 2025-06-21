@@ -24,7 +24,14 @@ const InState2 = () => {
     isHovered: false,
     isLit: false
   },
-  
+  { 
+    x: 466, 
+    y: 568, 
+    width: 96, 
+    height: 96,
+    isHovered: false,
+    isLit: false
+  },
   { 
     x: 564, 
     y: 250, 
@@ -33,8 +40,14 @@ const InState2 = () => {
     isHovered: false,
     isLit: false
   },
-  
-  
+  { 
+    x: 204, 
+    y: 394, 
+    width: 96, 
+    height: 96,
+    isHovered: false,
+    isLit: false
+  },
   { 
     x: 1300, 
     y: 600, 
@@ -108,8 +121,8 @@ const InState2 = () => {
     isMovingToTarget: boolean;
     moveHorizontalFirst: boolean;
   }>({ 
-    x: 828, 
-    y: 576, 
+    x: 1158, 
+    y: 778, 
     width: 96, 
     height: 96, 
     speed: 2, // Reduced speed for better control

@@ -1,11 +1,19 @@
 'use client'
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-export default function FarmTile({ index, state, onSteal }) {
+type CropState = 'grown' | 'planted' | 'stolen';
+
+interface FarmTileProps {
+  index: number;
+  state: CropState;
+  onSteal: (index: number) => void;
+}
+
+export default function FarmTile({ index, state, onSteal }: FarmTileProps) {
   const [hovered, setHovered] = useState(false);
   
   // Determine the image source based on the crop state
-  const getImageSrc = (state) => {
+  const getImageSrc = (state: CropState): string => {
     switch(state) {
       case 'grown':
         return '/well-grown.png';

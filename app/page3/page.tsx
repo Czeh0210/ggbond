@@ -1,11 +1,15 @@
 'use client'
 import { useState } from 'react';
 import Shop from "../components/Shop";
+import ReturnMap from "../components/ReturnMap";
 import FarmTile from "../components/FarmTile";
+
+// Import the CropState type from FarmTile
+type CropState = 'grown' | 'planted' | 'stolen';
 
 export default function Page3() {
   // Initialize crop states: first row is grown, rest are planted
-  const [cropStates, setCropStates] = useState([
+  const [cropStates, setCropStates] = useState<CropState[]>([
     'grown', 'grown', 'grown',
     'planted', 'planted', 'planted',
     'planted', 'planted', 'planted'
@@ -33,6 +37,11 @@ export default function Page3() {
           alt="Green Field Background"
           className="w-full h-full object-cover"
         />
+      </div>
+
+      {/* Return Map Button - Top Left Corner */}
+      <div className="absolute top-4 left-4 z-20">
+        <ReturnMap />
       </div>
 
       {/* Shop Icon - Top Right Corner */}

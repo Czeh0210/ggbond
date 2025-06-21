@@ -1,9 +1,7 @@
 
 ---
 
-> *Don’t let forgetting lead cultural heritage to true death.*
-
-*CutiCuti Malaysia* is an interactive, **map-based exploration game** where players virtually travel across Malaysia. Players begin by selecting a **starting state (initial origin)**, where they establish a personal **farm**. From this origin point, players light up the roads to reach **tourism-value destinations** and **cultural sites**.
+**CutiCuti Malaysia** is an interactive, **map-based exploration game** where players virtually travel across Malaysia. Players begin by selecting a **starting state (initial origin)**, where they establish a personal **farm**. From this origin point, players light up the roads to reach **tourism-value destinations** and **cultural sites**.
 
 As players explore, they unlock:
 
@@ -17,6 +15,8 @@ By progressing in the game, players earn **coins** and complete **milestones** t
 ---
 
 ## 🎯 **Purpose of the Game**
+
+> *Don’t let forgetting lead cultural heritage to true death.*
 
 * Promote awareness of Malaysia’s rich cultural, natural, and tourism heritage.
 * Support national tourism campaigns by linking gameplay to real-world destinations.

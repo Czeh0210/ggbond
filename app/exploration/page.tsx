@@ -2,8 +2,8 @@
 import { useState, useEffect } from 'react';
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import InState from "../../components/InState";
-import InState2 from "../../components/InState2";
+import InState from "../../components/JohorState";
+import InState2 from "../../components/SelangorState";
 import Profile from "../../components/Profile";
 import styles from './exploration.module.css';
 

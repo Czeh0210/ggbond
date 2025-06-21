@@ -6,7 +6,8 @@ import LandmarkInfo from './LandMarkTab';
 const InState = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [landmarkInfoOpen, setLandmarkInfoOpen] = useState(false);
-  const [currentLandmark, setCurrentLandmark] = useState<'lamp' | 'airport'>('lamp');
+  const [currentLandmark, setCurrentLandmark] = useState<'lamp' | 'airport' | 'temple'>('lamp');
+  const [currentLandmarkImage, setCurrentLandmarkImage] = useState<string>("/assets/tangible/SultanMosque.png");
   const [hasFlightTicket, setHasFlightTicket] = useState(true); // User has a flight ticket by default
   // Define lamp objects as an array
   const lampsRef = useRef<Array<{
@@ -322,8 +323,15 @@ const InState = () => {
           player.targetY = lamp.y;
           player.isMovingToTarget = true;
           
-          // Show landmark info immediately when user clicks the lamp
-          setCurrentLandmark('lamp');
+          // Check if this is the specific lamp at position x: 1300, y: 600
+          if (lamp.x === 1300 && lamp.y === 600) {
+            setCurrentLandmark('temple');
+            setCurrentLandmarkImage('/assets/tangible/TempleParade.png');
+          } else {
+            setCurrentLandmark('lamp');
+            setCurrentLandmarkImage('/assets/tangible/SultanMosque.png');
+          }
+          
           setLandmarkInfoOpen(true);
           
           break; // Only interact with one lamp at a time
@@ -661,7 +669,8 @@ const InState = () => {
         open={landmarkInfoOpen} 
         setOpen={setLandmarkInfoOpen} 
         landmarkType={currentLandmark} 
-        hasFlightTicket={hasFlightTicket} 
+        hasFlightTicket={hasFlightTicket}
+        landmarkImage={currentLandmarkImage}
       />
     </div>
   );

@@ -2,12 +2,12 @@
 import { useState } from 'react';
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import InState from "../components/InState";
-import InState2 from "../components/InState2";
+import InState from "../components/JohorState";
+import InState2 from "../components/SelangorState";
 
 // Import Game component dynamically to avoid SSR issues with Phaser
 const GameWithNoSSR = dynamic(
-  () => import('../components/InState'),
+  () => import('../components/JohorState'),
   { ssr: false }
 );
 

@@ -35,8 +35,9 @@ function useLocationContext(): LocationContextType {
 interface LandmarkInfoProps {
   open: boolean;
   setOpen: (open: boolean) => void;
-  landmarkType?: 'lamp' | 'airport';
+  landmarkType?: 'lamp' | 'airport' | 'temple';
   hasFlightTicket?: boolean;
+  landmarkImage?: string;
 }
 
 // FlyButton component to handle location changes
@@ -76,7 +77,7 @@ function FlyButton({ destination, setOpen }: { destination: string, setOpen: (op
   );
 }
 
-const LandmarkInfo = ({ open, setOpen, landmarkType = 'lamp', hasFlightTicket = true }: LandmarkInfoProps) => {
+const LandmarkInfo = ({ open, setOpen, landmarkType = 'lamp', hasFlightTicket = true, landmarkImage = "/assets/tangible/SultanMosque.png" }: LandmarkInfoProps) => {
   // Use different tab state types based on landmark type
   const [tab, setTab] = useState<'INFO' | 'FLIGHT' | 'HISTORY' | 'PHOTOS'>(landmarkType === 'airport' ? 'INFO' : 'INFO');
 
@@ -111,14 +112,14 @@ const LandmarkInfo = ({ open, setOpen, landmarkType = 'lamp', hasFlightTicket = 
               ))}
             </div>
             {/* Content */}
-            <div className="p-5 bg-[#f7e0a3] min-h-[200px] flex flex-col items-center justify-center">
+            <div className="p-5 bg-[#f7e0a3] h-[350px] overflow-y-auto scrollbar-thin scrollbar-thumb-[#a86c3c] scrollbar-track-[#e2c290] flex flex-col">
               {tab === 'INFO' && (
                 <div className="w-full border-4 border-[#a86c3c] rounded-lg bg-[#f7e0a3] p-4 shadow-inner" style={{boxShadow:'0 0 0 4px #bfa46a'}}>
                   <div className="flex items-start gap-4">
                     {/* Left: Image */}
                     <div className="p-2 border-4 border-[#a86c3c] bg-[#e2c290] rounded-lg flex items-center justify-center" style={{boxShadow:'0 0 0 3px #bfa46a'}}>
                       <img 
-                        src={landmarkType === 'airport' ? "/map/airportpixel.png" : "/assets/tangible/SultanMosque.png"} 
+                        src={landmarkType === 'airport' ? "/map/airportpixel.png" : landmarkImage} 
                         alt={landmarkType} 
                         className="w-24 h-24 object-contain pixelated" 
                       />
@@ -126,15 +127,20 @@ const LandmarkInfo = ({ open, setOpen, landmarkType = 'lamp', hasFlightTicket = 
                     {/* Right: Information */}
                     <div className="flex-1">
                       <h3 className="font-bold text-2xl text-[#7c5a3a] tracking-widest pixel-font mb-2 capitalize">
-                        {landmarkType === 'airport' ? 'Johor Bahru Airport' : 'Sultan Ibrahim Building'}
+                        {landmarkType === 'airport' ? 'Johor Bahru Airport' : 
+                         landmarkType === 'temple' ? 'Johor Temple Parade' : 
+                         'Sultan Ibrahim Building'}
                       </h3>
                       <p className="text-[#7c5a3a] mb-2">
                         {landmarkType === 'airport' 
                           ? 'Senai International Airport is the main airport serving Johor Bahru and the southern region of Peninsular Malaysia.'
+                          : landmarkType === 'temple'
+                          ? 'The Temple Parade is a vibrant cultural celebration in Johor, featuring ornate decorations, traditional music, and colorful processions honoring local deities.'
                           : 'The Sultan Ibrahim Building is an iconic historical landmark in Johor Bahru, Malaysia. Built in 1940, it features a distinct blend of Malay and colonial architectural styles.'}
                       </p>
                       <p className="text-[#7c5a3a] mb-2">
                         {landmarkType === 'lamp' && 'These ornate lamps surrounding the building are part of the original design, illuminating the structure at night and highlighting its architectural beauty.'}
+                        {landmarkType === 'temple' && 'This annual celebration brings together the community and showcases the rich cultural heritage of Johor\'s diverse population.'}
                       </p>
                       {landmarkType === 'airport' && (
                         <div className="flex items-center gap-2 mt-3">

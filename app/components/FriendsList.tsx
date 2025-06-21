@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 // NOTE: Please add avatar1.png, avatar2.png, avatar3.png to your /public folder.
 // Also, ensure the 'pixel-font' and 'pixelated' classes are defined in your global styles.
@@ -33,9 +34,11 @@ export default function FriendsList({ open, setOpen }: { open: boolean, setOpen:
                     <img src={friend.avatar} alt={friend.name} className="w-16 h-16 rounded-lg border-2 border-[#7c5a3a] pixelated" />
                     <span className="text-xl font-bold text-[#7c5a3a]">{friend.name}</span>
                   </div>
-                  <button className="px-3 py-2 bg-[#a86c3c] text-white font-bold text-base rounded shadow-md border-b-4 border-[#7c5a3a] hover:bg-[#c4884a] transition-all pixel-font tracking-wider">
-                    VISIT FARM
-                  </button>
+                  <Link href="/friendfarm">
+                    <button className="px-3 py-2 bg-[#a86c3c] text-white font-bold text-base rounded shadow-md border-b-4 border-[#7c5a3a] hover:bg-[#c4884a] transition-all pixel-font tracking-wider">
+                      VISIT FARM
+                    </button>
+                  </Link>
                 </div>
               ))}
             </div>

@@ -54,6 +54,7 @@ type CropState = 'grown' | 'planted' | 'stolen';
           playerDurian={playerDurian}
           playerPineapple={playerPineapple}
           batuCavesTicket={batuCavesTicket}
+          setPlayerDurian={setPlayerDurian}
         />
       </div>
 
@@ -110,6 +111,6 @@ type CropState = 'grown' | 'planted' | 'stolen';
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>
+  );
 }

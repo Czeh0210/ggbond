@@ -5,6 +5,8 @@ type InventoryProps = {
   playerDurian: number;
   playerPineapple: number;
   batuCavesTicket: number;
+  sapling: number;
+  aeroplane: number;
   setPlayerDurian: React.Dispatch<React.SetStateAction<number>>;
 };
 
@@ -12,6 +14,8 @@ export default function Inventory({
   playerDurian,
   playerPineapple,
   batuCavesTicket,
+  sapling,
+  aeroplane,
   setPlayerDurian,
 }: InventoryProps) {
   const [open, setOpen] = useState(false);
@@ -20,6 +24,8 @@ export default function Inventory({
     { name: "DURIAN", img: "/DURIAN.png", count: playerDurian },
     { name: "PINEAPPLE", img: "/PINEAPPLE.png", count: playerPineapple },
     { name: "BATU CAVES TICKET", img: "/BATUCAVES.png", count: batuCavesTicket },
+    { name: "SAPLING", img: "/sapling.png", count: sapling },
+    { name: "AEROPLANE", img: "/aeroplane.png", count: aeroplane },
   ];
 
   return (

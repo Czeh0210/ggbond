@@ -9,6 +9,16 @@ export default function Page3() {
   const [playerDurian, setPlayerDurian] = useState<number>(3);
   const [playerPineapple, setPlayerPineapple] = useState<number>(3);
   const [batuCavesTicket, setBatuCavesTicket] = useState<number>(1);
+  const [sapling, setSapling] = useState<number>(0);
+  const [coins, setCoins] = useState<number>(52);
+  const [aeroplane, setAeroplane] = useState<number>(0);
+
+  const items = [
+    { name: "DURIAN", img: "/DURIAN.png", count: playerDurian },
+    { name: "PINEAPPLE", img: "/PINEAPPLE.png", count: playerPineapple },
+    { name: "BATU CAVES TICKET", img: "/BATUCAVES.png", count: batuCavesTicket },
+    { name: "SAPLING", img: "/sapling.png", count: sapling },
+  ];
 
   return (
     <div className="relative w-screen h-screen overflow-hidden">
@@ -35,11 +45,19 @@ export default function Page3() {
           setPlayerPineapple={setPlayerPineapple}
           batuCavesTicket={batuCavesTicket}
           setBatuCavesTicket={setBatuCavesTicket}
+          sapling={sapling}
+          setSapling={setSapling}
+          coins={coins}
+          setCoins={setCoins}
+          aeroplane={aeroplane}
+          setAeroplane={setAeroplane}
         />
         <Inventory
           playerDurian={playerDurian}
           playerPineapple={playerPineapple}
           batuCavesTicket={batuCavesTicket}
+          sapling={sapling}
+          aeroplane={aeroplane}
         />
       </div>
 

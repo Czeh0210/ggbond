@@ -8,6 +8,12 @@ type ShopProps = {
   setPlayerPineapple: React.Dispatch<React.SetStateAction<number>>;
   batuCavesTicket: number;
   setBatuCavesTicket: React.Dispatch<React.SetStateAction<number>>;
+  sapling: number;
+  setSapling: React.Dispatch<React.SetStateAction<number>>;
+  coins: number;
+  setCoins: React.Dispatch<React.SetStateAction<number>>;
+  aeroplane: number;
+  setAeroplane: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export default function Shop({
@@ -17,10 +23,15 @@ export default function Shop({
   setPlayerPineapple,
   batuCavesTicket,
   setBatuCavesTicket,
+  sapling,
+  setSapling,
+  coins,
+  setCoins,
+  aeroplane,
+  setAeroplane,
 }: ShopProps) {
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState('BUY');
-  const [coins, setCoins] = useState(52);
   const [sellDurian, setSellDurian] = useState(0);
   const [sellPineapple, setSellPineapple] = useState(0);
 
@@ -74,11 +85,48 @@ export default function Shop({
                         <img src="/coin.png" alt="coin" className="w-7 h-7 inline-block" />
                         <span className="font-bold text-xl text-[#e6b800] drop-shadow pixel-font">20 COINS</span>
                       </div>
-                      <button className="mt-2 w-[120px] py-2 bg-[#a86c3c] text-white font-bold text-xl rounded shadow-md border-b-4 border-[#7c5a3a] hover:bg-[#c4884a] transition-all pixel-font tracking-widest">BUY</button>
+                      <button
+                        className="mt-2 w-[120px] py-2 bg-[#a86c3c] text-white font-bold text-xl rounded shadow-md border-b-4 border-[#7c5a3a] hover:bg-[#c4884a] transition-all pixel-font tracking-widest"
+                        onClick={() => {
+                          if (coins >= 20) {
+                            setCoins(coins - 20);
+                            setSapling(sapling + 1);
+                          }
+                        }}
+                        disabled={coins < 20}
+                      >
+                        BUY
+                      </button>
                     </div>
                     {/* Right: Sapling Image in pixel-art border */}
                     <div className="ml-6 p-2 border-4 border-[#a86c3c] bg-[#f7e0a3] rounded-lg flex items-center justify-center" style={{boxShadow:'0 0 0 3px #bfa46a'}}>
                       <img src="/sapling.png" alt="sapling" className="w-16 h-16 pixelated" />
+                    </div>
+                  </div>
+                  <div className="w-full flex items-center justify-between border-4 border-[#a86c3c] rounded-lg bg-[#f7e0a3] p-4 shadow-inner mb-4" style={{boxShadow:'0 0 0 4px #bfa46a'}}>
+                    {/* Left: Text, Price, Button */}
+                    <div className="flex flex-col items-start gap-3 flex-1">
+                      <span className="font-bold text-2xl text-[#7c5a3a] tracking-widest pixel-font">AEROPLANE</span>
+                      <div className="flex items-center gap-2">
+                        <img src="/coin.png" alt="coin" className="w-7 h-7 inline-block" />
+                        <span className="font-bold text-xl text-[#e6b800] drop-shadow pixel-font">80 COINS</span>
+                      </div>
+                      <button
+                        className="mt-2 w-[120px] py-2 bg-[#a86c3c] text-white font-bold text-xl rounded shadow-md border-b-4 border-[#7c5a3a] hover:bg-[#c4884a] transition-all pixel-font tracking-widest"
+                        onClick={() => {
+                          if (coins >= 80) {
+                            setCoins(coins - 80);
+                            setAeroplane(aeroplane + 1);
+                          }
+                        }}
+                        disabled={coins < 80}
+                      >
+                        BUY
+                      </button>
+                    </div>
+                    {/* Right: Aeroplane Image in pixel-art border */}
+                    <div className="ml-6 p-2 border-4 border-[#a86c3c] bg-[#f7e0a3] rounded-lg flex items-center justify-center" style={{boxShadow:'0 0 0 3px #bfa46a'}}>
+                      <img src="/aeroplane.png" alt="aeroplane" className="w-16 h-16 pixelated" />
                     </div>
                   </div>
                 </>

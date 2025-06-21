@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useContext } from 'react';
-import { LocationContext } from '../app/page';
+import { LocationContext } from '../app/overview-map/johor/page';
 
 interface LandmarkInfoProps {
   open: boolean;
@@ -45,7 +45,7 @@ const LandmarkInfo = ({ open, setOpen, landmarkType = 'lamp', hasFlightTicket = 
     <div>
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-          <div className="relative w-[410px] rounded-lg border-4 border-[#7c5a3a] bg-[#f7e0a3] shadow-xl pixel-font p-0 overflow-hidden">
+          <div className="relative w-auto min-w-[350px] max-w-[90vw] md:max-w-[600px] rounded-lg border-4 border-[#7c5a3a] bg-[#f7e0a3] shadow-xl pixel-font p-0 overflow-hidden">
             {/* Header */}
             <div className="flex items-center justify-between bg-[#bfa46a] border-b-4 border-[#7c5a3a] px-4 py-2">
               <div className="flex items-center gap-2">
@@ -54,7 +54,7 @@ const LandmarkInfo = ({ open, setOpen, landmarkType = 'lamp', hasFlightTicket = 
                   alt={landmarkType} 
                   className="w-6 h-6 inline-block object-contain" 
                 />
-                <span className="font-bold text-lg text-[#fff7c2] drop-shadow capitalize">{landmarkType}</span>
+                {/* Removed the span with landmarkType text */}
               </div>
               <span className="text-2xl font-bold text-[#7c5a3a] tracking-widest">LANDMARK</span>
               <button onClick={() => setOpen(false)} className="text-[#7c5a3a] hover:text-red-600 text-xl font-bold px-2">✕</button>
@@ -79,8 +79,8 @@ const LandmarkInfo = ({ open, setOpen, landmarkType = 'lamp', hasFlightTicket = 
                     {/* Left: Image */}
                     <div className="p-2 border-4 border-[#a86c3c] bg-[#e2c290] rounded-lg flex items-center justify-center" style={{boxShadow:'0 0 0 3px #bfa46a'}}>
                       <img 
-                        src={landmarkType === 'airport' ? "/map/airport.png" : "/assets/lamp(unlighted).png"} 
-                        alt={landmarkType} 
+                        src={landmarkType === 'airport' ? "/assets/placephoto/senaiairport.webp" : "/assets/placephoto/sultanIbrahim.jpg"} 
+                        alt={landmarkType === 'airport' ? "Senai Airport" : "Sultan Ibrahim Building"} 
                         className="w-24 h-24 object-contain pixelated" 
                       />
                     </div>
@@ -196,12 +196,12 @@ const LandmarkInfo = ({ open, setOpen, landmarkType = 'lamp', hasFlightTicket = 
                     </div>
                     <div className="border-2 border-[#a86c3c] rounded-lg p-1 bg-[#e2c290]">
                       <div className="bg-[#bfa46a] h-24 w-full rounded flex items-center justify-center">
-                        <span className="text-[#7c5a3a] text-sm">Night View</span>
+                      <img src="/assets/placephoto/night_sultanibrahim.jpg" alt="Night View" className="w-full h-full object-cover" />
                       </div>
                     </div>
                     <div className="border-2 border-[#a86c3c] rounded-lg p-1 bg-[#e2c290]">
-                      <div className="bg-[#bfa46a] h-24 w-full rounded flex items-center justify-center">
-                        <span className="text-[#7c5a3a] text-sm">Historical Photo</span>
+                      <div className="bg-[#bfa46a] h-24 w-full rounded flex items-center justify-center overflow-hidden">
+                        <img src="/assets/placephoto/history_sultanibrahim.jpg" alt="Historical Photo" className="w-full h-full object-cover" />
                       </div>
                     </div>
                   </div>

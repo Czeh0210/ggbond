@@ -311,8 +311,10 @@ const InState = () => {
         const distY = Math.abs(worldMouseY - lamp.y);
         
         if (distX < lamp.width/2 && distY < lamp.height/2) {
-          // Toggle lamp state
-          lamp.isLit = !lamp.isLit;
+          // Turn on lamp if it's not already lit
+          if (!lamp.isLit) {
+            lamp.isLit = true;
+          }
           
           // Set player target to move to lamp position
           const player = playerRef.current;

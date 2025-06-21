@@ -5,6 +5,8 @@ type InventoryProps = {
   playerDurian: number;
   playerPineapple: number;
   batuCavesTicket: number;
+  sapling: number;
+  aeroplane: number;
   setPlayerDurian: React.Dispatch<React.SetStateAction<number>>;
 };
 
@@ -12,6 +14,8 @@ export default function Inventory({
   playerDurian,
   playerPineapple,
   batuCavesTicket,
+  sapling,
+  aeroplane,
   setPlayerDurian,
 }: InventoryProps) {
   const [open, setOpen] = useState(false);
@@ -20,17 +24,22 @@ export default function Inventory({
     { name: "DURIAN", img: "/DURIAN.png", count: playerDurian },
     { name: "PINEAPPLE", img: "/PINEAPPLE.png", count: playerPineapple },
     { name: "BATU CAVES TICKET", img: "/BATUCAVES.png", count: batuCavesTicket },
+    { name: "SAPLING", img: "/sapling.png", count: sapling },
+    { name: "AEROPLANE", img: "/aeroplane.png", count: aeroplane },
   ];
 
   return (
     <>
-      <div className="flex justify-center items-center mt-6">
+      <div className="flex justify-center items-center mt-6 relative group">
         <img
           src="/Box.png"
           alt="Inventory Chest"
-          className="w-[80px] h-[80px] md:w-[120px] md:h-[120px] pixelated cursor-pointer"
+          className="w-[80px] h-[80px] md:w-[120px] md:h-[120px] pixelated cursor-pointer hover:scale-110 transition-transform duration-200"
           onClick={() => setOpen(true)}
         />
+        <div className="tooltip absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-amber-100 px-2 py-1 rounded text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+          Open Inventory
+        </div>
       </div>
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">

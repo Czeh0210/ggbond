@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import LandmarkInfo from './ShopTab';
+import LandmarkInfo from './LandMarkTab';
 
 const InState2 = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -24,14 +24,7 @@ const InState2 = () => {
     isHovered: false,
     isLit: false
   },
-  { 
-    x: 466, 
-    y: 568, 
-    width: 96, 
-    height: 96,
-    isHovered: false,
-    isLit: false
-  },
+  
   { 
     x: 564, 
     y: 250, 
@@ -40,14 +33,7 @@ const InState2 = () => {
     isHovered: false,
     isLit: false
   },
-  { 
-    x: 204, 
-    y: 394, 
-    width: 96, 
-    height: 96,
-    isHovered: false,
-    isLit: false
-  },
+  
   { 
     x: 1300, 
     y: 600, 
@@ -121,8 +107,8 @@ const InState2 = () => {
     isMovingToTarget: boolean;
     moveHorizontalFirst: boolean;
   }>({ 
-    x: 1158, 
-    y: 778, 
+    x: 828, 
+    y: 580, 
     width: 96, 
     height: 96, 
     speed: 2, // Reduced speed for better control
@@ -603,8 +589,32 @@ const InState2 = () => {
       ctx.fillStyle = 'black';
       ctx.font = '16px Arial';
       ctx.fillText('Use arrow keys to move', 20, 30);
-      ctx.fillText(`Position: X:${Math.round(player.x)}, Y:${Math.round(player.y)}`, 20, 50);
-      ctx.fillText(`Zoom: ${camera.zoom.toFixed(1)}x (Mouse wheel to zoom)`, 20, 70);
+      
+      // Draw position and zoom info in a styled box similar to ShopTab
+      const infoBoxWidth = 200;
+      const infoBoxHeight = 80;
+      const infoBoxX = canvas.width - infoBoxWidth - 20;
+      const infoBoxY = 20;
+      
+      // Draw outer border (dark brown)
+      ctx.fillStyle = '#a86c3c';
+      ctx.fillRect(infoBoxX - 4, infoBoxY - 4, infoBoxWidth + 8, infoBoxHeight + 8);
+      
+      // Draw inner border (light brown)
+      ctx.fillStyle = '#bfa46a';
+      ctx.fillRect(infoBoxX - 2, infoBoxY - 2, infoBoxWidth + 4, infoBoxHeight + 4);
+      
+      // Draw background (cream)
+      ctx.fillStyle = '#f7e0a3';
+      ctx.fillRect(infoBoxX, infoBoxY, infoBoxWidth, infoBoxHeight);
+      
+      // Draw text
+      ctx.fillStyle = '#7c5a3a';
+      ctx.font = 'bold 14px Arial';
+      ctx.fillText('LOCATION: KUALA LUMPUR', infoBoxX + 10, infoBoxY + 20);
+      ctx.font = '12px Arial';
+      ctx.fillText(`Position: X:${Math.round(player.x)}, Y:${Math.round(player.y)}`, infoBoxX + 10, infoBoxY + 40);
+      ctx.fillText(`Zoom: ${camera.zoom.toFixed(1)}x (Mouse wheel to zoom)`, infoBoxX + 10, infoBoxY + 60);
 
       // Continue the game loop
       animationFrameId = requestAnimationFrame(gameLoop);

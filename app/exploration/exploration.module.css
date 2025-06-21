@@ -1,0 +1,46 @@
+/* Sea background animation */
+.seaBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background-image: url('/map/sea.png');
+  background-size: 512px 512px;
+  animation: animateSea 20s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes animateSea {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 512px 512px;
+  }
+}
+
+/* Add a second layer of sea with different animation timing for depth */
+.seaBackgroundLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background-image: url('/map/sea.png');
+  background-size: 512px 512px;
+  animation: animateSeaLayer 15s linear infinite;
+  opacity: 0.4;
+  transform: rotate(10deg); /* Slightly rotated for more natural look */
+}
+
+@keyframes animateSeaLayer {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -512px -512px;
+  }
+}

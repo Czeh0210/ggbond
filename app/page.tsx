@@ -32,7 +32,7 @@ const ChevronDownIcon = () => (
 // A simple stateful component for the accordion functionality
 const FaqItem = ({ q, a }: { q: string, a: string }) => {
     const [isOpen, setIsOpen] = React.useState(false);
-    return (
+  return (
         <div className="border-b border-gray-200 py-4">
             <button
                 className="w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800"
@@ -70,6 +70,6 @@ export default function CutiCutiExplorerPage() {
             <SocialProof />
             <Faq />
             <Footer />
-        </div>
-    );
+    </div>
+  );
 }

@@ -17,7 +17,7 @@ const features = [
     href: "#",
     cta: "Learn more",
     background: <img alt="person" className="absolute -right-20 -top-20 opacity-60" />,
-    className: "lg:col-span-1",
+    className: "lg:row-start-1 lg:row-end-2 lg:col-start-2 lg:col-end-4",
   },
   {
     Icon: DrawingPinIcon,
@@ -26,7 +26,7 @@ const features = [
     href: "#",
     cta: "Learn more",
     background: <img alt="map pin" className="absolute -right-20 -top-20 opacity-60" />,
-    className: "lg:col-span-1",
+    className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
   },
   {
     Icon: RocketIcon,
@@ -35,7 +35,7 @@ const features = [
     href: "#",
     cta: "Learn more",
     background: <img alt="people exploring" className="absolute -right-20 -top-20 opacity-60" />,
-    className: "lg:col-span-1",
+    className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
   },
   {
     Icon: LockOpen1Icon,
@@ -44,7 +44,7 @@ const features = [
     href: "#",
     cta: "Learn more",
     background: <img alt="old building" className="absolute -right-20 -top-20 opacity-60" />,
-    className: "lg:col-span-1",
+    className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
   },
   {
     Icon: EnterIcon,
@@ -53,7 +53,7 @@ const features = [
     href: "#",
     cta: "Learn more",
     background: <img alt="travel" className="absolute -right-20 -top-20 opacity-60" />,
-    className: "lg:col-span-1",
+    className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
   },
     {
     Icon: MixIcon,
@@ -62,7 +62,7 @@ const features = [
     href: "#",
     cta: "Learn more",
     background: <img alt="adventure" className="absolute -right-20 -top-20 opacity-60" />,
-    className: "lg:col-span-1",
+    className: "lg:col-start-1 lg:col-end-2 lg:row-start-4 lg:row-end-5",
   },
 ];
 
@@ -73,7 +73,7 @@ export default function HowItWorks() {
             <div className="max-w-6xl mx-auto text-center">
                 <h2 className="text-3xl font-bold mb-2">Your Adventure Awaits</h2>
                 <p className="text-gray-600 mb-12">A simple path to discovery.</p>
-                 <BentoGrid className="lg:grid-cols-3">
+                 <BentoGrid className="lg:grid-rows-3 lg:grid-cols-2">
                     {features.map((feature) => (
                         <BentoCard key={feature.name} {...feature} />
                     ))}
@@ -81,4 +81,4 @@ export default function HowItWorks() {
             </div>
         </section>
     );
-}
+} 

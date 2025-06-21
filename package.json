@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@radix-ui/react-icons": "^1.3.2",
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-slot": "^1.2.3",
@@ -25,6 +26,13 @@
     "react-dom": "^19.0.0",
     "react-use-measure": "^2.1.7",
     "tailwind-merge": "^3.3.1"
+=======
+    "lucide-react": "^0.519.0",
+    "next": "15.2.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0"
+>>>>>>> d445ad03676e0521e9447810ae42a19602e681bf
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -32,7 +40,10 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "tailwindcss": "^4",
+<<<<<<< HEAD
     "tw-animate-css": "^1.3.4",
+=======
+>>>>>>> d445ad03676e0521e9447810ae42a19602e681bf
     "typescript": "^5"
   }
 }

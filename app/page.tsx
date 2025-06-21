@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from "next/image";
+import { useState } from 'react';
 
 // Helper components for icons (placeholders)
 const PlayIcon = () => (
@@ -66,11 +67,22 @@ import UniqueFeatures from './components/UniqueFeatures';
 import SocialProof from './components/SocialProof';
 import Faq from './components/Faq';
 import Footer from './components/Footer';
+import Login from './components/Login';
 
 export default function CutiCutiExplorerPage() {
+    const [showLogin, setShowLogin] = useState(false);
+
+    const handleJoinJourney = () => {
+        setShowLogin(true);
+    };
+
+    if (showLogin) {
+        return <Login />;
+    }
+
     return (
         <div className="bg-white font-[family-name:var(--font-geist-sans)]">
-            <Hero />
+            <Hero onJoinJourneyClick={handleJoinJourney} />
             <ProblemVision />
             <HowItWorks />
             <EthnicMotif />

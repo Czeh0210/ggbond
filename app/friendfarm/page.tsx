@@ -9,6 +9,8 @@ export default function friendfarm() {
   const [playerDurian, setPlayerDurian] = useState<number>(3);
   const [playerPineapple, setPlayerPineapple] = useState<number>(3);
   const [batuCavesTicket, setBatuCavesTicket] = useState<number>(1);
+  const [sapling, setSapling] = useState<number>(0);
+  const [aeroplane, setAeroplane] = useState<number>(0);
 
 // Import the CropState type from FarmTile
 type CropState = 'grown' | 'planted' | 'stolen';
@@ -57,6 +59,9 @@ type CropState = 'grown' | 'planted' | 'stolen';
           playerDurian={playerDurian}
           playerPineapple={playerPineapple}
           batuCavesTicket={batuCavesTicket}
+          sapling={sapling}
+          aeroplane={aeroplane}
+          setPlayerDurian={setPlayerDurian}
         />
       </div>
 

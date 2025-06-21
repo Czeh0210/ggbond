@@ -7,11 +7,55 @@ import { FaFacebook, FaGoogle, FaApple } from 'react-icons/fa'
 
 const Login = () => {
   const [isSignUp, setIsSignUp] = useState(false)
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const [notification, setNotification] = useState('');
   const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    router.push('/map');
+    setError('');
+    setNotification('');
+
+    if (isSignUp) {
+      // Handle Sign Up
+      try {
+        const response = await fetch('/api/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password }),
+        });
+        const data = await response.json();
+        if (response.ok) {
+          setNotification('Sign Up Successfully!');
+          setIsSignUp(false); // Switch to login form
+          setUsername(''); // Clear fields
+          setPassword('');
+        } else {
+          setError(data.message || 'Sign Up Unsuccessfully!');
+        }
+      } catch (error) {
+        setError('Failed to connect to the server.');
+      }
+    } else {
+      // Handle Login
+      try {
+        const response = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password }),
+        });
+        const data = await response.json();
+        if (response.ok) {
+          router.push('/map');
+        } else {
+          setError(data.message || 'Login failed.');
+        }
+      } catch (error) {
+        setError('Failed to connect to the server.');
+      }
+    }
   };
 
   return (
@@ -45,17 +89,35 @@ const Login = () => {
           {isSignUp && (
             <div className="relative mb-5">
               <User size={20} className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400" />
-              <input type="text" placeholder="Name" className="w-full py-4 pl-14 pr-4 bg-[#7c5a3a]/50 border-2 border-[#bfa46a] placeholder-gray-300" />
+              <input 
+                type="text" 
+                placeholder="Name" 
+                className="w-full py-4 pl-14 pr-4 bg-[#7c5a3a]/50 border-2 border-[#bfa46a] placeholder-gray-300" 
+              />
             </div>
           )}
           <div className="relative mb-5">
             <Mail size={20} className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400" />
-            <input type="email" placeholder="Email" className="w-full py-4 pl-14 pr-4 bg-[#7c5a3a]/50 border-2 border-[#bfa46a] placeholder-gray-300" />
+            <input 
+              type="text" 
+              placeholder="Username" 
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="w-full py-4 pl-14 pr-4 bg-[#7c5a3a]/50 border-2 border-[#bfa46a] placeholder-gray-300" 
+            />
           </div>
           <div className="relative mb-5">
             <Lock size={20} className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400" />
-            <input type="password" placeholder="Password" className="w-full py-4 pl-14 pr-4 bg-[#7c5a3a]/50 border-2 border-[#bfa46a] placeholder-gray-300" />
+            <input 
+              type="password" 
+              placeholder="Password" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full py-4 pl-14 pr-4 bg-[#7c5a3a]/50 border-2 border-[#bfa46a] placeholder-gray-300" 
+            />
           </div>
+          {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+          {notification && <p className="text-green-500 text-sm mb-4">{notification}</p>}
           <button type="submit" className="w-full py-4 bg-[#a86c3c] text-white text-lg font-bold mt-2.5 border-2 border-[#7c5a3a] !shadow-[4px_4px_0px_0px_#5a3a1e] hover:bg-[#c4884a] transition-colors uppercase">
             {isSignUp ? 'SIGN UP' : 'LOGIN'}
           </button>

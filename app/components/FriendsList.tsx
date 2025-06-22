@@ -16,7 +16,7 @@ export default function FriendsList({ open, setOpen }: { open: boolean, setOpen:
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={() => setOpen(false)}>
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60" onClick={() => setOpen(false)}>
       <div className="relative w-[500px] h-[500px] bg-[#f7e0a3] shadow-xl pixel-font p-0 overflow-hidden" onClick={(e) => e.stopPropagation()}>
         <div className="relative h-full w-full rounded-lg border-4 border-[#7c5a3a] p-0 overflow-hidden flex flex-col">
             {/* Header */}

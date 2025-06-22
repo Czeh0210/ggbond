@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function ReturnMap() {
   return (
-    <Link href="/map">
+    <Link href="/exploration">
       <div className="return-map-container relative group">
         <img 
           src="/return-map.png" 

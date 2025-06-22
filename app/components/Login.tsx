@@ -48,7 +48,7 @@ const Login = () => {
         });
         const data = await response.json();
         if (response.ok) {
-          router.push('/map');
+          router.push('/exploration');
         } else {
           setError(data.message || 'Login failed.');
         }

@@ -32,6 +32,6 @@ export default function CutiCutiExplorerPage() {
             <SocialProof />
             <Faq />
             <Footer />
-    </div>
-  );
+        </div>
+    );
 }

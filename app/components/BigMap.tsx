@@ -8,8 +8,8 @@ export default function BigMap() {
   const [isFriendsListOpen, setIsFriendsListOpen] = useState(false);
 
   return (
-    <div className="h-screen bg-gray-100 relative">
-      <div className="absolute top-4 left-4 flex flex-col gap-4">
+    <>
+      <div className="flex flex-col gap-4">
         <button onClick={() => setIsFriendsListOpen(true)} className="focus:outline-none">
           <Image 
             src="/Friends.jpg" 
@@ -32,6 +32,6 @@ export default function BigMap() {
         </Link>
       </div>
       <FriendsList open={isFriendsListOpen} setOpen={setIsFriendsListOpen} />
-    </div>
+    </>
   );
 }

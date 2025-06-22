@@ -45,20 +45,20 @@ export default function Shop({
         onClick={() => setOpen(true)}
       />
       <div className="tooltip absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-amber-100 px-2 py-1 rounded text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
-        Shop
+        Open Shop
       </div>
 
       {/* Modal */}
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-          <div className="relative w-[410px] rounded-lg border-4 border-[#7c5a3a] bg-[#f7e0a3] shadow-xl pixel-font p-0 overflow-hidden">
+          <div className="relative w-[410px] rounded-lg border-4 border-[#7c5a3a] bg-[#f7e0a3] shadow-xl p-0 overflow-hidden">
             {/* Header */}
             <div className="flex items-center justify-between bg-[#bfa46a] border-b-4 border-[#7c5a3a] px-4 py-2">
               <div className="flex items-center gap-2">
                 <img src="/coin.png" alt="coin" className="w-6 h-6 inline-block" />
                 <span className="font-bold text-lg text-[#fff7c2] drop-shadow">{coins}</span>
               </div>
-              <span className="text-2xl font-bold text-[#7c5a3a] tracking-widest">SHOP</span>
+              <span className="text-2xl font-bold text-[#7c5a3a]">SHOP</span>
               <button onClick={() => setOpen(false)} className="text-[#7c5a3a] hover:text-red-600 text-xl font-bold px-2">✕</button>
             </div>
             {/* Tabs */}
@@ -77,16 +77,16 @@ export default function Shop({
             <div className="p-5 bg-[#f7e0a3] min-h-[200px] flex flex-col items-center justify-center">
               {tab === 'BUY' && (
                 <>
-                  <div className="w-full flex items-center justify-between border-4 border-[#a86c3c] rounded-lg bg-[#f7e0a3] p-4 shadow-inner mb-4" style={{boxShadow:'0 0 0 4px #bfa46a'}}>
+                  <div className="w-full flex items-center justify-between border-4 border-[#a86c3c] rounded-lg bg-[#f7e0a3] p-5 shadow-inner mb-4" style={{boxShadow:'0 0 0 4px #bfa46a'}}>
                     {/* Left: Text, Price, Button */}
                     <div className="flex flex-col items-start gap-3 flex-1">
-                      <span className="font-bold text-2xl text-[#7c5a3a] tracking-widest pixel-font">SAPLING</span>
+                      <span className="font-bold text-2xl text-[#7c5a3a]">SAPLING</span>
                       <div className="flex items-center gap-2">
                         <img src="/coin.png" alt="coin" className="w-7 h-7 inline-block" />
-                        <span className="font-bold text-xl text-[#e6b800] drop-shadow pixel-font">20 COINS</span>
+                        <span className="font-bold text-xl text-[#e6b800] drop-shadow">20 COINS</span>
                       </div>
                       <button
-                        className="mt-2 w-[120px] py-2 bg-[#a86c3c] text-white font-bold text-xl rounded shadow-md border-b-4 border-[#7c5a3a] hover:bg-[#c4884a] transition-all pixel-font tracking-widest"
+                        className="mt-2 w-[120px] py-2 bg-[#a86c3c] text-white font-bold text-xl rounded shadow-md border-b-4 border-[#7c5a3a] hover:bg-[#c4884a] transition-all"
                         onClick={() => {
                           if (coins >= 20) {
                             setCoins(coins - 20);
@@ -103,16 +103,16 @@ export default function Shop({
                       <img src="/sapling.png" alt="sapling" className="w-16 h-16 pixelated" />
                     </div>
                   </div>
-                  <div className="w-full flex items-center justify-between border-4 border-[#a86c3c] rounded-lg bg-[#f7e0a3] p-4 shadow-inner mb-4" style={{boxShadow:'0 0 0 4px #bfa46a'}}>
+                  <div className="w-full flex items-center justify-between border-4 border-[#a86c3c] rounded-lg bg-[#f7e0a3] p-5 shadow-inner mb-4" style={{boxShadow:'0 0 0 4px #bfa46a'}}>
                     {/* Left: Text, Price, Button */}
                     <div className="flex flex-col items-start gap-3 flex-1">
-                      <span className="font-bold text-2xl text-[#7c5a3a] tracking-widest pixel-font">AEROPLANE</span>
+                      <span className="font-bold text-2xl text-[#7c5a3a]">AEROPLANE</span>
                       <div className="flex items-center gap-2">
                         <img src="/coin.png" alt="coin" className="w-7 h-7 inline-block" />
-                        <span className="font-bold text-xl text-[#e6b800] drop-shadow pixel-font">80 COINS</span>
+                        <span className="font-bold text-xl text-[#e6b800] drop-shadow">80 COINS</span>
                       </div>
                       <button
-                        className="mt-2 w-[120px] py-2 bg-[#a86c3c] text-white font-bold text-xl rounded shadow-md border-b-4 border-[#7c5a3a] hover:bg-[#c4884a] transition-all pixel-font tracking-widest"
+                        className="mt-2 w-[120px] py-2 bg-[#a86c3c] text-white font-bold text-xl rounded shadow-md border-b-4 border-[#7c5a3a] hover:bg-[#c4884a] transition-all"
                         onClick={() => {
                           if (coins >= 80) {
                             setCoins(coins - 80);
@@ -132,24 +132,24 @@ export default function Shop({
                 </>
               )}
               {tab === 'REDEEM' && (
-                <div className="w-full flex items-center justify-between border-4 border-[#a86c3c] rounded-lg bg-[#f7e0a3] p-4 shadow-inner" style={{boxShadow:'0 0 0 4px #bfa46a'}}>
+                <div className="w-full flex items-center justify-between border-4 border-[#a86c3c] rounded-lg bg-[#f7e0a3] p-5 shadow-inner" style={{boxShadow:'0 0 0 4px #bfa46a'}}>
                   {/* Left: Text, Price, Button */}
-                  <div className="flex flex-col items-start gap-4 flex-1">
-                    <span className="font-bold text-3xl text-[#7c5a3a] tracking-widest pixel-font">BATU CAVES<br/>TICKET</span>
+                  <div className="flex flex-col items-start gap-3 flex-1">
+                    <span className="font-bold text-3xl text-[#7c5a3a]">BATU CAVES<br/>TICKET</span>
                     <div className="flex items-center gap-2">
                       <img src="/coin.png" alt="coin" className="w-7 h-7 inline-block" />
-                      <span className="font-bold text-2xl text-[#e6b800] drop-shadow pixel-font whitespace-nowrap">
+                      <span className="font-bold  text-xl text-[#e6b800] drop-shadow whitespace-nowrap">
                         5000 COINS
                       </span>
                     </div>
                     <button
-                      className="mt-2 w-[160px] px-4 py-3 bg-[#a86c3c] text-white font-extrabold text-2xl rounded shadow-md border-4 border-[#7c5a3a] border-b-[8px] hover:bg-[#c4884a] transition-all pixel-font tracking-widest leading-tight"
+                      className="mt-2 w-[160px] px-4 py-2 bg-[#a86c3c] text-white font-extrabold text-xl rounded shadow-md border-b-4 border-[#7c5a3a] hover:bg-[#c4884a] transition-all"
                     >
                       REDEEM
                     </button>
                   </div>
                   {/* Right: Ticket Image in pixel-art border */}
-                  <div className="ml-8 p-2 border-4 border-[#a86c3c] bg-[#e2c290] rounded-lg flex items-center justify-center" style={{boxShadow:'0 0 0 3px #bfa46a'}}>
+                  <div className="ml-4 p-2 border-4 border-[#a86c3c] bg-[#e2c290] rounded-lg flex items-center justify-center" style={{boxShadow:'0 0 0 3px #bfa46a'}}>
                     <img src="/BATUCAVES.png" alt="Batu Caves Ticket" className="w-24 h-32 pixelated" />
                   </div>
                 </div>
@@ -157,16 +157,16 @@ export default function Shop({
               {tab === 'SELL' && (
                 <div className="flex flex-col gap-6 w-full">
                   {/* Durian Box */}
-                  <div className="w-full flex items-center justify-between border-4 border-[#a86c3c] rounded-lg bg-[#f7e0a3] p-4 shadow-inner" style={{boxShadow:'0 0 0 4px #bfa46a'}}>
+                  <div className="w-full flex items-center justify-between border-4 border-[#a86c3c] rounded-lg bg-[#f7e0a3] p-5 shadow-inner" style={{boxShadow:'0 0 0 4px #bfa46a'}}>
                     {/* Left: Text, Price, Button */}
                     <div className="flex flex-col items-start gap-4 flex-1">
-                      <span className="font-bold text-2xl text-[#7c5a3a] tracking-widest pixel-font">DURIAN</span>
+                      <span className="font-bold text-2xl text-[#7c5a3a]">DURIAN</span>
                       <div className="flex items-center gap-2">
                         <img src="/coin.png" alt="coin" className="w-7 h-7 inline-block" />
-                        <span className="font-bold text-xl text-[#e6b800] drop-shadow pixel-font whitespace-nowrap">100 COINS</span>
+                        <span className="font-bold text-xl text-[#e6b800] drop-shadow whitespace-nowrap">100 COINS</span>
                       </div>
                       <button
-                        className="mt-2 w-[120px] px-4 py-2 bg-[#a86c3c] text-white font-extrabold text-xl rounded shadow-md border-4 border-[#7c5a3a] border-b-[8px] hover:bg-[#c4884a] transition-all pixel-font tracking-widest leading-tight disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="mt-2 w-[120px] px-4 py-2 bg-[#a86c3c] text-white font-extrabold text-xl rounded shadow-md border-4 border-[#7c5a3a] border-b-[8px] hover:bg-[#c4884a] transition-all leading-tight disabled:opacity-50 disabled:cursor-not-allowed"
                         disabled={sellDurian === 0}
                         onClick={() => {
                           setPlayerDurian(playerDurian - sellDurian);
@@ -188,27 +188,27 @@ export default function Shop({
                           onClick={() => setSellDurian(Math.max(0, sellDurian - 1))}
                           disabled={sellDurian === 0}
                         >-</button>
-                        <span className="font-bold text-lg text-[#7c5a3a] pixel-font min-w-[24px] text-center">{sellDurian}</span>
+                        <span className="font-bold text-lg text-[#7c5a3a] min-w-[24px] text-center">{sellDurian}</span>
                         <button
                           className="w-7 h-7 bg-[#a86c3c] text-white font-bold rounded hover:bg-[#c4884a] border-2 border-[#7c5a3a]"
                           onClick={() => setSellDurian(Math.min(playerDurian, sellDurian + 1))}
                           disabled={sellDurian === playerDurian}
                         >+</button>
                       </div>
-                      <span className="font-bold text-xs text-[#7c5a3a] pixel-font mt-1">You have: {playerDurian}</span>
+                      <span className="font-bold text-xs text-[#7c5a3a] mt-1">You have: {playerDurian}</span>
                     </div>
                   </div>
                   {/* Pineapple Box */}
-                  <div className="w-full flex items-center justify-between border-4 border-[#a86c3c] rounded-lg bg-[#f7e0a3] p-4 shadow-inner" style={{boxShadow:'0 0 0 4px #bfa46a'}}>
+                  <div className="w-full flex items-center justify-between border-4 border-[#a86c3c] rounded-lg bg-[#f7e0a3] p-5 shadow-inner" style={{boxShadow:'0 0 0 4px #bfa46a'}}>
                     {/* Left: Text, Price, Button */}
                     <div className="flex flex-col items-start gap-4 flex-1">
-                      <span className="font-bold text-2xl text-[#7c5a3a] tracking-widest pixel-font">PINEAPPLE</span>
+                      <span className="font-bold text-2xl text-[#7c5a3a]">PINEAPPLE</span>
                       <div className="flex items-center gap-2">
                         <img src="/coin.png" alt="coin" className="w-7 h-7 inline-block" />
-                        <span className="font-bold text-xl text-[#e6b800] drop-shadow pixel-font whitespace-nowrap">50 COINS</span>
+                        <span className="font-bold text-xl text-[#e6b800] drop-shadow whitespace-nowrap">50 COINS</span>
                       </div>
                       <button
-                        className="mt-2 w-[120px] px-4 py-2 bg-[#a86c3c] text-white font-extrabold text-xl rounded shadow-md border-4 border-[#7c5a3a] border-b-[8px] hover:bg-[#c4884a] transition-all pixel-font tracking-widest leading-tight disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="mt-2 w-[120px] px-4 py-2 bg-[#a86c3c] text-white font-extrabold text-xl rounded shadow-md border-4 border-[#7c5a3a] border-b-[8px] hover:bg-[#c4884a] transition-all leading-tight disabled:opacity-50 disabled:cursor-not-allowed"
                         disabled={sellPineapple === 0}
                         onClick={() => {
                           setPlayerPineapple(playerPineapple - sellPineapple);
@@ -230,14 +230,14 @@ export default function Shop({
                           onClick={() => setSellPineapple(Math.max(0, sellPineapple - 1))}
                           disabled={sellPineapple === 0}
                         >-</button>
-                        <span className="font-bold text-lg text-[#7c5a3a] pixel-font min-w-[24px] text-center">{sellPineapple}</span>
+                        <span className="font-bold text-lg text-[#7c5a3a] min-w-[24px] text-center">{sellPineapple}</span>
                         <button
                           className="w-7 h-7 bg-[#a86c3c] text-white font-bold rounded hover:bg-[#c4884a] border-2 border-[#7c5a3a]"
                           onClick={() => setSellPineapple(Math.min(playerPineapple, sellPineapple + 1))}
                           disabled={sellPineapple === playerPineapple}
                         >+</button>
                       </div>
-                      <span className="font-bold text-xs text-[#7c5a3a] pixel-font mt-1">You have: {playerPineapple}</span>
+                      <span className="font-bold text-xs text-[#7c5a3a] mt-1">You have: {playerPineapple}</span>
                     </div>
                   </div>
                 </div>
